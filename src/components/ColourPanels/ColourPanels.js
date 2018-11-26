@@ -3,8 +3,9 @@ import React from 'react';
 import './ColourPanels.css';
 
 const ColourPanels = (props) => {
+   const classes = ['Panel', props.colour].join(' ');
    return (
-      <div className={props.colour} onClick={props.clicked}></div>
+      <div className={classes} onClick={props.clicked}></div>
    );
 };
 
