@@ -1,7 +1,7 @@
 .Panel {
    width: 50%;
    height: 20%;
-   flex-basis: 100%;
+   flex-basis: 50%;
 }
 
 .Red {
