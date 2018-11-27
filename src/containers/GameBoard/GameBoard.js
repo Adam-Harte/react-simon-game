@@ -7,6 +7,34 @@ import button from '../../components/Button/Button';
 
 class GameBoard extends Component {
 
+   componentDidMount() {
+      const sequence = this.generateSequence();
+      let i = 0;
+      let playSequence = setInterval(() => {
+         this.lightup(sequence[i]);
+         i++;
+         if (i >= sequence.length) {
+            clearInterval(playSequence);
+         }
+      }, 500);
+   }
+
+   getRandomNum = (min, max) => {
+      return Math.floor(Math.random() * (max - min) + min);
+   }
+
+   generateSequence = () => {
+      const seq = [];
+
+      for (let i = 0; i < 24; i++) {
+         seq.push(this.getRandomNum(0, 4));
+      }
+
+      console.log(seq);
+
+      return seq;
+   }
+
    lightup = (item) => {
       let panel = document.querySelectorAll(".Panel")[item];
       panel.classList.add('lightup');
